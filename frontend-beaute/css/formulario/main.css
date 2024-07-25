@@ -1,0 +1,267 @@
+.banner {
+    background-image: url("../../img/banner-formulario.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.banner__titulo {
+    font-weight: 600;
+    color: var(--branco);
+    font-size: 32px;
+    line-height: 39px;
+    width: 40%;
+    margin: 0 auto;
+}
+
+.formulario {
+    margin: 1em auto;
+    width: 50vw;
+}
+
+.breadcrumb {
+    margin: 1rem;
+    text-decoration: none;
+    text-align: center;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+}
+
+.breadcrumb li {
+    display: inline;
+    font-size: 20px;
+    color: var(--rosa-claro);
+
+}
+
+.breadcrumb__pagina {
+    font-weight: 700;
+}
+
+.login {
+    text-align: center;
+    display: flex;
+}
+
+.formulario__container {
+    margin: 3em 0;
+    text-align: center;
+}
+
+.formulario__campo {
+    margin-bottom: 2em;
+}
+
+.formulario__titulo-texto {
+    margin: 1em 0;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 34px;
+}
+
+.campo__etiqueta {
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.campo__escrita {
+    display: block;
+    border: 2px solid var(--verde-claro);
+    border-radius: 20px;
+    width: 100%;
+    padding: 1em;
+    margin-top: .5em;
+
+}
+
+.campo__escrita--menor {
+    width: 50%;
+}
+
+.termos__texto {
+    line-height: 20px;
+    display: inline;
+}
+
+.formulario__botao,
+.camera__botao {
+    margin: 2em auto;
+    display: block;
+    background-color: var(--rosa-claro);
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: var(--fonte-card);
+    border: none;
+    padding: 1em 4em;
+    margin-top: 16px;
+    box-shadow: var(--rosa-claro) 1.95px 1.95px 2.6px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.formulario__imagem {
+    display: block;
+    margin: 2em auto;
+    width: 20rem;
+}
+
+.formulario__imagem--invisivel {
+    display: none;
+}
+
+.formulario__botao--ancora {
+    text-decoration: none;
+    width: 50%;
+}
+
+.formulario__texto {
+    margin: 1em 4em;
+}
+
+.formulario__texto--negrito {
+    font-weight: 700;
+}
+
+.formulario__texto-secundario {
+    margin: 2em 2em;
+}
+
+.mensagem-erro {
+    color: red;
+}
+
+.campo__escrita--erro {
+    border: 2px solid red;
+}
+
+.formulario__mensagem,
+.formulario__camera {
+    display: none;
+}
+
+.formulario__mensagem--sucesso,
+.formulario__camera--exibir {
+    display: block;
+}
+
+#login {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+#email__login, #password__login {
+    padding: 1em 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    border-radius: 10px;
+    margin: 1.5em 0em;
+}
+#email__login::placeholder, #password__login::placeholder {
+    padding-left: 10px;
+
+}
+
+.greeting {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.signup-link {
+    font-weight: bold;
+    color: var(--rosa-claro)
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}
+
+#esqueci {
+    text-decoration: none;
+    color: black;
+}
+#esqueci:hover {
+    text-decoration: underline 2px;
+    text-decoration-color: var(--verde-claro);
+    text-underline-offset: 4px;
+}
+#login-message {
+    color: red;
+    padding-bottom: 10px;
+  }
+
+#button__google {
+    margin: 2em auto;
+    display: block;
+    background-color: lightgray;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: var(--fonte-card);
+    border: none;
+    padding: 1em 4em;
+    margin-top: 16px;
+    box-shadow: lightgray 1.95px 1.95px 2.6px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.line-container {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.line {
+    flex-grow: 1;
+    height: 2px;
+    background-color: #ddd;
+    margin: 10px;
+}
+
+#line {
+    margin: 0 10px;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 900px) {
+    .formulario {
+        width: 80%;
+    }
+
+    .formulario__etapas {
+        width: 70%;
+    }
+    .formulario {
+        margin: 2em;
+    }
+
+    .breadcrumb {
+        text-decoration: none;
+    }
+    .formulario__imagem {
+        width: 12rem;
+    }
+
+    
+}

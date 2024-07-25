@@ -1,0 +1,85 @@
+.banner {
+    background: var(--rosa);
+    color: black;
+    height: 4em;
+    margin: 1em 1em;
+    display: none;
+    font-family: var(--fonte-principal);
+}
+
+.banner__titulo {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.banner__texto {
+    font-weight: 500;
+    margin: 1em 0;
+}
+
+.banner__pesquisa {
+    background-color: transparent;
+    border: 1px solid gray;
+    color: black;
+    border-bottom-left-radius: 12px;
+    border-top-left-radius: 12px;
+    padding: 1em;
+    width: 100%;    
+}
+
+.banner__pesquisa::placeholder {
+    font-family: var(--fonte-principal);
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    color: gray;    
+}
+.btn-search {
+    background-color: var(--verde-claro);
+    border: 1px solid gray;
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 9.5px;
+    width: 50px;
+}
+
+@media screen and (min-width: 1024px) {
+    .banner {
+        position: relative;
+        display: block;
+        margin: 0;
+        z-index: 1000;
+    }
+    
+    .banner__titulo {
+        font-size: 36px;
+    }
+
+    .btn-search {
+        margin: 0 auto;
+    }
+    
+    .banner__pesquisa {
+        width: 100%;
+        margin: 0 auto; 
+        margin-left: 5px;
+    }
+
+    .banner__pesquisa::placeholder {
+        background-position: 7em;
+    }
+}
+
+@media screen and (min-width: 1728px) {
+    .banner__pesquisa {
+        width: 30%;
+       margin-left: 5%;
+    }
+    .btn-search {
+        margin-right:10%;
+    }
+
+    .banner__pesquisa::placeholder {
+        background-position: 12em;
+    }  
+}
