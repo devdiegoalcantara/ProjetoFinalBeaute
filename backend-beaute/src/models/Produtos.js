@@ -16,11 +16,11 @@ const produtoSchema = new mongoose.Schema(
       required: [true, "A descrição é obrigatória"]
     },
     price:{
-      type: Number,
+      type: String,
       required: [true, "O preço é obrigatório"]
     },
     parcela:{
-      type: Number,
+      type: String,
       required: [true, "A parcela é obrigatória"]
     },
     gender:{
