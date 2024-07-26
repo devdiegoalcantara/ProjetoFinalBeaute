@@ -1,14 +1,14 @@
 import express from "express";
-import AutorController from "../controllers/autoresController.js";
+import UsuarioController from "../controllers/usuariosController.js";
 import paginar from "../middlewares/paginar.js";
 
 const router = express.Router();
 
 router
-  .get("/autores", AutorController.listarAutores, paginar)
-  .get("/autores/:id", AutorController.listarAutorPorId)
-  .post("/autores", AutorController.cadastrarAutor)
-  .put("/autores/:id", AutorController.atualizarAutor)
-  .delete("/autores/:id", AutorController.excluirAutor);
+  .get("/usuarios", UsuarioController.listarUsuarios, paginar)
+  .get("/usuarios/:id", UsuarioController.listarUsuarioPorId)
+  .post("/usuarios", UsuarioController.cadastrarUsuario)
+  .put("/usuarios/:id", UsuarioController.atualizarUsuario)
+  .delete("/usuarios/:id", UsuarioController.excluirUsuario);
 
 export default router;   
