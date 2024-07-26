@@ -99,11 +99,19 @@ class ProdutoController {
 }
 
 async function processaBusca(parametros) {
-  const { title } = parametros;
+  const { title, preco_min, preco_max } = parametros;
 
   let busca = {};
 
-  if (title) busca.title = { $regex: title, $options: "i" };
+  if (title) {
+    busca.title = { $regex: title, $options: "i" };
+  }
+
+  if (preco_min || preco_max) {
+    busca.preco = {};
+    if (preco_min) busca.preco.$gte = parseFloat(preco_min);
+    if (preco_max) busca.preco.$lte = parseFloat(preco_max);
+  }
 
   return busca;
 }
