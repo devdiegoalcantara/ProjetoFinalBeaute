@@ -1,7 +1,7 @@
 import NaoEncontrado from "../erros/NaoEncontrado.js";
 import { usuarios, produtos } from "../models/index.js";
 
-class ProdutosController {
+class ProdutoController {
 
   static listarProdutos = async (req, res, next) => {
     try {
