@@ -40,3 +40,22 @@ function carregarProdutosPorGenero(gender, containerId) {
   // Load products Male
   carregarProdutosPorGenero('masculino', 'produtos-masculinos');
   
+
+const barraDePesquisa = document.querySelector(".banner__pesquisa");
+
+barraDePesquisa.addEventListener("input", filtrarPesquisa);
+
+function filtrarPesquisa() {
+  const produtos = document.querySelectorAll(".cards");
+  const valorFiltro = barraDePesquisa.value.toLowerCase();
+
+  produtos.forEach(produto => {
+      const titulo = produto.querySelector(".product-title").textContent.toLowerCase();
+
+      if (valorFiltro === "" || titulo.includes(valorFiltro)) {
+          produto.style.display = "block";
+      } else {
+          produto.style.display = "none";
+      }
+  });
+}
