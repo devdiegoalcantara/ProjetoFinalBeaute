@@ -99,21 +99,27 @@ class ProdutoController {
 }
 
 async function processaBusca(parametros) {
-  const { title, preco_min, preco_max } = parametros;
+  const { title, preco_min } = parametros;
 
-  let busca = {};
+  const busca = {};
 
-  if (title) {
-    busca.title = { $regex: title, $options: "i" };
+  function converterPreco(price) {
+    if (price) {
+      return parseFloat(price.replace('R$ ', '').replace(',', '.'));
+    }
+    return null;
   }
 
-  if (preco_min || preco_max) {
-    busca.preco = {};
-    if (preco_min) busca.preco.$gte = parseFloat(preco_min);
-    if (preco_max) busca.preco.$lte = parseFloat(preco_max);
+  if (title) {
+    busca.title = { $regex: title, $options: 'i' };
+  }
+
+  const precoMin = converterPreco(preco_min);
+
+  if (precoMin !== null) {
+    busca.price = { $gte: precoMin };
   }
 
   return busca;
 }
-
 export default ProdutoController;
