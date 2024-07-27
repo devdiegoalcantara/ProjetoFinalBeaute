@@ -1,6 +1,6 @@
 // Load Products
 function carregarProdutosPorGenero(gender, containerId) {
-      fetch('http://localhost:3000/produtos')
+      fetch("http://localhost:3000/produtos")
       .then(response => response.json())
       .then(produtos => {
         const container = document.getElementById(containerId);
