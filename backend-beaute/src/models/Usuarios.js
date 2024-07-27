@@ -2,28 +2,28 @@ import mongoose from "mongoose";
 
 const usuarioSchema = new mongoose.Schema(
   {
-    id: {type: String},
+    id: { type: String },
     nome: {
       type: String,
       required: [true, "O nome do(a) usuário(a) é obrigatório"]
     },
-    email:{
+    email: {
       type: String,
       required: [true, "O e-mail é obrigatório"]
     },
-    rg:{
-      type: Number,
+    rg: {
+      type: String,
       required: [true, "O RG é obrigatório"]
     },
-    cpf:{
-      type: Number,
+    cpf: {
+      type: String, 
       required: [true, "O CPF é obrigatório"]
     },
-    dataNascimento:{
+    dataNascimento: {
       type: String,
       required: [true, "A data de nascimento é obrigatória"]
     },
-    senha:{
+    senha: {
       type: String,
       required: [true, "A senha é obrigatória"]
     },
@@ -33,6 +33,6 @@ const usuarioSchema = new mongoose.Schema(
   }
 );
 
-const usuarios = mongoose.model("usuários", usuarioSchema);
+const usuarios = mongoose.model("usuarios", usuarioSchema);
 
 export default usuarios;

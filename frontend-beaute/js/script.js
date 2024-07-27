@@ -3,7 +3,7 @@ import ehMaiorDeIdade from "./valida-idade.js";
 const camposDoFormulario = document.querySelectorAll('[required]')
 const formulario = document.querySelector('[data-formulario]');
 
-formulario.addEventListener("submit", (e) => {
+formulario.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const listaRespostas = {
@@ -11,14 +11,30 @@ formulario.addEventListener("submit", (e) => {
         "email": e.target.elements["email"].value,
         "rg": e.target.elements["rg"].value,
         "cpf": e.target.elements["cpf"].value,
-        "aniversario": e.target.elements["aniversario"].value,
-        "password": e.target.elements["password"].value,
+        "dataNascimento": e.target.elements["aniversario"].value,
+        "senha": e.target.elements["password"].value,
+    };
+
+    try {
+        const response = await fetch('http://localhost:3000/usuarios', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(listaRespostas)
+        });
+
+        if (response.ok) {
+            window.location.href = "./abrir-conta-form-2.html";
+        } else {
+            const errorText = await response.text();
+            console.error('Erro ao enviar dados:', errorText);
+        }
+    } catch (error) {
+        console.error('Erro ao enviar dados:', error);
     }
+});
 
-    localStorage.setItem("cadastro", JSON.stringify(listaRespostas));
-
-    window.location.href = "./abrir-conta-form-2.html";
-})
 
 camposDoFormulario.forEach((campo) => {
     campo.addEventListener("blur", () => verificaCampo(campo));
