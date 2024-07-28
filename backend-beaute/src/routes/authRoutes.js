@@ -18,7 +18,7 @@ router.post('/login', async (req, res) => {
 
     if (match) {
       const nome = usuario.nome.split(' ')[0];
-      res.json({ message: `Olá! Que bom que você voltou ${nome}.` });
+      res.json({ nome: nome });
     } else {
       res.status(401).json({ message: 'E-mail ou senha inválidos.' });
     }
