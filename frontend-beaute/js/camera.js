@@ -21,7 +21,6 @@ botaoIniciarCamera.addEventListener('click', async function () {
 botaoTirarFoto.addEventListener('click', function () {
     canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
     imagemURL = canvas.toDataURL('image/jpeg');
-
     campoCamera.style.display = "none";
     mensagem.style.display = "block";
 });
@@ -30,9 +29,11 @@ botaoEnviarFoto.addEventListener('click', () => {
     const receberDadosExistentes = localStorage.getItem("cadastro");
     const converteRetorno = JSON.parse(receberDadosExistentes) || {}; 
 
-    converteRetorno.imagem = imagemURL; 
+    if (imagemURL) {
+        converteRetorno.imagem = imagemURL;
+    }
 
-    localStorage.setItem('cadastro', JSON.stringify(converteRetorno)); 
+    localStorage.setItem('cadastro', JSON.stringify(converteRetorno));
 
     window.location.href = '../pages/abrir-conta-form-3.html';
 });
