@@ -1,4 +1,5 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
+import hashPassword from '../middlewares/passwordEncrypt.js';
 
 const usuarioSchema = new mongoose.Schema(
   {
@@ -32,6 +33,8 @@ const usuarioSchema = new mongoose.Schema(
     versionKey: false
   }
 );
+
+usuarioSchema.pre('save', hashPassword);
 
 const usuarios = mongoose.model("usuarios", usuarioSchema);
 
