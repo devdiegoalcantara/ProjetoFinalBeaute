@@ -26,6 +26,6 @@ document.getElementById("login-form").addEventListener("submit", async function(
       document.getElementById("login-message").textContent = result.message;
     }
   } catch (error) {
-    document.getElementById("login-message").textContent = "Erro ao tentar realizar login. Por favor, tente novamente mais tarde.";
+    document.getElementById("login-message").textContent = "Usuário ou Senha inválidos, por favor tente novamente.";
   }
 });
