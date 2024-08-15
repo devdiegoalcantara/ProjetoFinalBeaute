@@ -2,7 +2,7 @@
 
 > Uma pequena amostra do site: 
 <p align="center">
-<img src="./img/beaute.gif">
+<img src="./frontend-beaute/img/beaute.gif">
 </p> 
 
 > Responsivo:
